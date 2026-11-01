@@ -19,8 +19,14 @@ export default function HotelLogo({ className = '', size = 'md', showTagline = f
     lg: 'text-2xl tracking-[0.25em]',
   };
 
+  const subTextSizes = {
+    sm: 'text-[7px] tracking-[0.22em]',
+    md: 'text-[7.5px] sm:text-[8px] tracking-[0.28em]',
+    lg: 'text-[9.5px] tracking-[0.3em]',
+  };
+
   return (
-    <div className={`flex items-center gap-3 group cursor-pointer ${className}`}>
+    <div className={`flex items-center gap-2.5 sm:gap-3 group cursor-pointer ${className}`}>
       {/* Refined Boutique Botanical Leaf & Sun Emblem */}
       <div className={`relative ${iconSizes[size]} flex items-center justify-center shrink-0`}>
         <svg viewBox="0 0 32 32" className="w-full h-full text-white fill-none stroke-current" strokeWidth="1.75">
@@ -34,16 +40,16 @@ export default function HotelLogo({ className = '', size = 'md', showTagline = f
         </svg>
       </div>
 
-      <div className="flex flex-col text-left">
-        <span className={`font-serif-title font-bold uppercase text-white ${textSizes[size]}`}>
+      <div className="flex flex-col items-center justify-center text-center">
+        <span className={`font-serif-title font-bold uppercase text-white whitespace-nowrap leading-tight text-center ${textSizes[size]}`}>
           MILI HOTEL
         </span>
-        <span className="text-[8px] sm:text-[9px] uppercase tracking-[0.3em] text-stone-300 font-light">
+        <span className={`uppercase text-stone-300 font-light whitespace-nowrap leading-tight mt-0.5 text-center ${subTextSizes[size]}`}>
           HOTEL RESTAURANTE
         </span>
         {showTagline && (
-          <span className="text-xs text-stone-400 mt-0.5 font-light italic">
-            Valle Sagrado de los Incas
+          <span className="text-xs text-stone-400 mt-1 font-light italic whitespace-nowrap text-center">
+            · Valle Sagrado de los Incas
           </span>
         )}
       </div>

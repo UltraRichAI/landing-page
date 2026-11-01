@@ -82,8 +82,8 @@ export default function App() {
       {/* 10. Boutique Footer */}
       <Footer />
 
-      {/* Floating Action Pill (Bottom Right) */}
-      <div className="fixed bottom-6 right-6 z-40 flex items-center gap-3">
+      {/* Floating Action Pill (Bottom Right - Mobile Only) */}
+      <div className="fixed bottom-6 right-6 z-40 flex items-center gap-3 md:hidden">
         <button
           onClick={() => handleOpenBooking()}
           className="px-5 py-3 rounded-full bg-[#233526] hover:bg-[#18261A] text-white text-xs font-semibold tracking-wider uppercase shadow-xl hover:shadow-2xl flex items-center gap-2 transition-all transform hover:scale-105 border border-white/20 cursor-pointer"

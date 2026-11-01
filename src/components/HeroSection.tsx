@@ -40,26 +40,28 @@ Hola, deseo consultar disponibilidad y tarifas en soles para estas fechas.`;
 
       {/* Main Hero Content */}
       <div className="relative z-10 max-w-7xl mx-auto w-full flex-1 flex flex-col justify-center my-auto">
-        <div className="max-w-2xl text-left space-y-6 pt-4">
+        <div className="max-w-3xl text-left space-y-5 pt-4">
           
-          {/* Main Title matching "Stay, differently" */}
+          {/* Location Badge - placed above the main title */}
+          <div>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/50 backdrop-blur-sm border border-white/20 text-white text-xs md:text-sm font-medium tracking-wide shadow-md">
+              <MapPin className="w-4 h-4 text-[#E6C665] shrink-0" />
+              <span>{HOTEL_INFO.location}</span>
+            </div>
+          </div>
+
+          {/* Main Title matching "Una estancia, diferente." */}
           <div className="space-y-3">
-            <h1 className="text-5xl sm:text-7xl lg:text-8xl text-white font-serif-title font-normal tracking-tight leading-[1.05] drop-shadow-md">
+            <h1 className="text-5xl md:text-6xl lg:text-7xl xl:text-8xl text-white font-serif-title font-bold tracking-tight leading-[1.08] drop-shadow-xl">
               Una estancia, <br />
-              <span className="font-cormorant italic font-light tracking-wide text-stone-100">
-                diferente
+              <span className="font-cormorant italic font-medium tracking-wide text-stone-100">
+                diferente.
               </span>
             </h1>
             
-            <p className="text-xs sm:text-sm uppercase tracking-[0.25em] text-stone-200 font-medium pt-1">
-              CONFORT BOUTIQUE. MOMENTOS INOLVIDABLES.
+            <p className="text-sm md:text-base uppercase tracking-wider text-white/95 font-medium pt-1 drop-shadow-md">
+              CONFORT BOUTIQUE · MOMENTOS INOLVIDABLES
             </p>
-          </div>
-
-          {/* Location Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-black/40 backdrop-blur-md border border-white/20 text-stone-200 text-xs tracking-wider uppercase">
-            <MapPin className="w-3.5 h-3.5 text-[#D4AF37]" />
-            <span>{HOTEL_INFO.location}</span>
           </div>
 
         </div>
@@ -67,12 +69,12 @@ Hola, deseo consultar disponibilidad y tarifas en soles para estas fechas.`;
 
       {/* Floating Booking / Search Bar */}
       <div className="relative z-20 max-w-5xl mx-auto w-full mt-8">
-        <div className="bg-[#FAF7F2] rounded-2xl sm:rounded-3xl p-4 sm:p-6 shadow-2xl border border-[#E8E1D3] text-[#1C221D]">
+        <div className="bg-[#FAF7F2] rounded-2xl sm:rounded-3xl p-5 sm:p-6 shadow-2xl border border-[#E8E1D3] text-[#1C221D]">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-4 items-center">
             
             {/* LLEGADA */}
             <div className="lg:col-span-3 p-3 rounded-xl hover:bg-[#F2ECE1] transition-colors border border-transparent hover:border-[#DDD5C5]">
-              <span className="block text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-[#6E7970] mb-1">
+              <span className="block text-xs uppercase tracking-wider font-semibold text-gray-600 mb-1">
                 LLEGADA
               </span>
               <div className="flex items-center justify-between">
@@ -80,15 +82,15 @@ Hola, deseo consultar disponibilidad y tarifas en soles para estas fechas.`;
                   type="date"
                   value={checkInDate}
                   onChange={(e) => setCheckInDate(e.target.value)}
-                  className="bg-transparent text-sm sm:text-base font-semibold text-[#1C221D] focus:outline-none cursor-pointer w-full"
+                  className="bg-transparent text-base md:text-lg font-bold text-gray-900 focus:outline-none cursor-pointer w-full"
                 />
-                <Calendar className="w-4 h-4 text-[#475149] shrink-0 pointer-events-none" />
+                <Calendar className="w-4 h-4 text-gray-700 shrink-0 pointer-events-none" />
               </div>
             </div>
 
             {/* SALIDA */}
             <div className="lg:col-span-3 p-3 rounded-xl hover:bg-[#F2ECE1] transition-colors border border-transparent hover:border-[#DDD5C5]">
-              <span className="block text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-[#6E7970] mb-1">
+              <span className="block text-xs uppercase tracking-wider font-semibold text-gray-600 mb-1">
                 SALIDA
               </span>
               <div className="flex items-center justify-between">
@@ -96,29 +98,29 @@ Hola, deseo consultar disponibilidad y tarifas en soles para estas fechas.`;
                   type="date"
                   value={checkOutDate}
                   onChange={(e) => setCheckOutDate(e.target.value)}
-                  className="bg-transparent text-sm sm:text-base font-semibold text-[#1C221D] focus:outline-none cursor-pointer w-full"
+                  className="bg-transparent text-base md:text-lg font-bold text-gray-900 focus:outline-none cursor-pointer w-full"
                 />
-                <Calendar className="w-4 h-4 text-[#475149] shrink-0 pointer-events-none" />
+                <Calendar className="w-4 h-4 text-gray-700 shrink-0 pointer-events-none" />
               </div>
             </div>
 
             {/* HUÉSPEDES */}
             <div className="lg:col-span-3 p-3 rounded-xl hover:bg-[#F2ECE1] transition-colors border border-transparent hover:border-[#DDD5C5]">
-              <span className="block text-[10px] sm:text-[11px] uppercase tracking-wider font-semibold text-[#6E7970] mb-1">
+              <span className="block text-xs uppercase tracking-wider font-semibold text-gray-600 mb-1">
                 HUÉSPEDES
               </span>
               <div className="relative">
                 <select
                   value={guests}
                   onChange={(e) => setGuests(e.target.value)}
-                  className="w-full bg-transparent text-sm sm:text-base font-semibold text-[#1C221D] focus:outline-none cursor-pointer appearance-none pr-6"
+                  className="w-full bg-transparent text-base md:text-lg font-bold text-gray-900 focus:outline-none cursor-pointer appearance-none pr-6"
                 >
                   <option value="1 Huésped">1 Huésped</option>
                   <option value="2 Huéspedes">2 Huéspedes</option>
                   <option value="3 Huéspedes">3 Huéspedes</option>
                   <option value="4+ Huéspedes">4+ Huéspedes</option>
                 </select>
-                <ChevronDown className="w-4 h-4 text-[#475149] absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none" />
+                <ChevronDown className="w-4 h-4 text-gray-700 absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none" />
               </div>
             </div>
 
@@ -126,14 +128,14 @@ Hola, deseo consultar disponibilidad y tarifas en soles para estas fechas.`;
             <div className="lg:col-span-3 flex flex-col gap-1.5">
               <button
                 onClick={handleHeroConsultar}
-                className="w-full py-4 px-4 rounded-xl bg-[#233526] hover:bg-[#18261A] text-white font-semibold text-xs sm:text-sm tracking-wider uppercase transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer flex items-center justify-center gap-2"
+                className="w-full py-3.5 px-6 rounded-xl bg-[#233526] hover:bg-[#18261A] text-white font-semibold text-sm tracking-wider uppercase transition-all duration-200 shadow-lg hover:shadow-xl cursor-pointer flex items-center justify-center gap-2"
               >
                 <span>CONSULTAR DISPONIBILIDAD</span>
               </button>
               <button
                 type="button"
                 onClick={onOpenBooking}
-                className="text-[11px] text-[#475149] hover:text-[#18261A] underline text-center cursor-pointer transition-colors font-medium tracking-wide uppercase"
+                className="text-[11px] text-gray-600 hover:text-gray-900 underline text-center cursor-pointer transition-colors font-medium tracking-wide uppercase"
               >
                 Personalizar Consulta
               </button>
@@ -142,19 +144,19 @@ Hola, deseo consultar disponibilidad y tarifas en soles para estas fechas.`;
           </div>
 
           {/* Guarantee Badges inside booking card */}
-          <div className="flex flex-wrap items-center gap-4 pt-3 mt-2 border-t border-[#E8E1D3]/80 text-[11px] text-[#6E7970]">
+          <div className="flex flex-wrap items-center gap-3 sm:gap-6 pt-3.5 mt-2 border-t border-[#E8E1D3]/80 text-xs md:text-sm text-gray-700 font-medium">
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#233526]" />
+              <CheckCircle2 className="w-4 h-4 text-[#233526] shrink-0" />
               Mejor Tarifa Garantizada
             </span>
-            <span className="text-[#C5BFA9]">|</span>
+            <span className="text-[#C5BFA9] hidden sm:inline">|</span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#233526]" />
+              <CheckCircle2 className="w-4 h-4 text-[#233526] shrink-0" />
               Sin Cargos Ocultos de Reserva
             </span>
-            <span className="text-[#C5BFA9]">|</span>
+            <span className="text-[#C5BFA9] hidden sm:inline">|</span>
             <span className="flex items-center gap-1.5">
-              <CheckCircle2 className="w-3.5 h-3.5 text-[#233526]" />
+              <CheckCircle2 className="w-4 h-4 text-[#233526] shrink-0" />
               Confirmación Inmediata con Concierge
             </span>
           </div>

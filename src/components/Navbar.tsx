@@ -42,24 +42,24 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
     <header
       className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
         isScrolled
-          ? 'bg-[#142016]/90 backdrop-blur-xl border-b border-white/10 py-3 shadow-lg shadow-black/20'
-          : 'bg-gradient-to-b from-black/70 via-black/30 to-transparent py-5'
+          ? 'bg-[#142016]/95 backdrop-blur-xl border-b border-white/10 py-3 shadow-lg shadow-black/20'
+          : 'bg-gradient-to-b from-black/80 via-black/50 to-transparent py-5'
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         {/* Brand Logo */}
-        <a href="#" className="flex items-center">
+        <a href="#" className="flex items-center shrink-0 mr-8 lg:mr-12 xl:mr-16">
           <HotelLogo size={isScrolled ? 'sm' : 'md'} />
         </a>
 
         {/* Desktop Nav Links */}
-        <nav className="hidden lg:flex items-center gap-7 text-xs font-semibold tracking-[0.18em] uppercase text-stone-200">
+        <nav className="hidden lg:flex items-center gap-3 xl:gap-6">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={link.href}
               onClick={(e) => handleNavClick(e, link.href)}
-              className="hover:text-white transition-colors relative py-1 text-[11px] after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-stone-200 after:transition-all hover:after:w-full"
+              className="text-white hover:text-stone-200 font-medium text-xs tracking-wider uppercase transition-colors relative py-1 drop-shadow-sm after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[2px] after:bg-white after:transition-all hover:after:w-full whitespace-nowrap"
             >
               {link.name}
             </a>
@@ -67,10 +67,10 @@ export default function Navbar({ onOpenBooking }: NavbarProps) {
         </nav>
 
         {/* Action Button: CONSULTAR DISPONIBILIDAD */}
-        <div className="hidden sm:flex items-center gap-4">
+        <div className="hidden sm:flex items-center gap-4 shrink-0 ml-6 lg:ml-8 xl:ml-10 pl-5 xl:pl-6 border-l border-white/20">
           <button
             onClick={onOpenBooking}
-            className="px-6 py-2.5 rounded-lg bg-[#233526] hover:bg-[#18261A] text-white font-semibold text-xs tracking-widest uppercase transition-all duration-200 shadow-md hover:shadow-lg border border-white/15 cursor-pointer"
+            className="px-5 xl:px-6 py-2.5 rounded-lg bg-[#233526] hover:bg-[#18261A] text-white font-semibold text-xs tracking-widest uppercase transition-all duration-200 shadow-md hover:shadow-lg border border-white/15 cursor-pointer whitespace-nowrap"
           >
             CONSULTAR DISPONIBILIDAD
           </button>
