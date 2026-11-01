@@ -12,13 +12,13 @@ export default function ExperienceDetailModal({ experience, onClose, onBook }: E
   if (!experience) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/75 backdrop-blur-md overflow-y-auto">
-      <div className="relative max-w-2xl w-full my-8 bg-[#FCFBF9] text-[#1C221D] border border-[#E8E1D3] rounded-3xl overflow-hidden shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/75 backdrop-blur-md overflow-y-auto">
+      <div className="relative max-w-2xl w-full max-h-[92vh] overflow-y-auto my-auto bg-[#FCFBF9] text-[#1C221D] border border-[#E8E1D3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl">
         
         {/* Top Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 z-20 p-2 rounded-full bg-black/60 backdrop-blur-md text-white hover:bg-[#233526] cursor-pointer transition-colors"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 p-2 rounded-full bg-black/60 backdrop-blur-md text-white hover:bg-[#233526] cursor-pointer transition-colors"
           aria-label="Cerrar modal"
         >
           <X className="w-4 h-4" />

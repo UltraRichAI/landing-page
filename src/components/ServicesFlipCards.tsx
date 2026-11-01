@@ -19,30 +19,30 @@ export default function ServicesFlipCards({ onSelectExperience, onBookExperience
   };
 
   return (
-    <section id="experiencias" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-[#F7F5F0] text-[#1C221D] overflow-hidden">
-      <div className="max-w-7xl mx-auto space-y-14 relative z-10">
+    <section id="experiencias" className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#F7F5F0] text-[#1C221D] overflow-hidden">
+      <div className="max-w-7xl mx-auto space-y-10 sm:space-y-14 relative z-10">
         
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto space-y-3">
+        <div className="text-center max-w-3xl mx-auto space-y-2.5 sm:space-y-3">
           <div className="flex items-center justify-center gap-3">
-            <span className="h-[1px] w-8 bg-[#D2CBB5]" />
-            <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[#6E7970]">
+            <span className="h-[1px] w-6 sm:w-8 bg-[#D2CBB5]" />
+            <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold text-[#6E7970]">
               EXPERIENCIAS EXCLUSIVAS
             </span>
-            <span className="h-[1px] w-8 bg-[#D2CBB5]" />
+            <span className="h-[1px] w-6 sm:w-8 bg-[#D2CBB5]" />
           </div>
 
-          <h2 className="text-3xl sm:text-5xl font-serif-title font-normal text-[#1C221D] tracking-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif-title font-normal text-[#1C221D] tracking-tight">
             Los 6 Santuarios de Mili Hotel
           </h2>
 
-          <p className="text-sm sm:text-base text-[#475149] font-light leading-relaxed">
+          <p className="text-xs sm:text-base text-[#475149] font-light leading-relaxed">
             Toca o pasa el cursor sobre cada tarjeta interactiva para descubrir los detalles, rituales e inclusiones de cada santuario.
           </p>
         </div>
 
         {/* Flip Cards Grid (6 items) */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {SERVICES_EXPERIENCES.map((service) => {
             const isFlipped = !!flippedCards[service.id];
 

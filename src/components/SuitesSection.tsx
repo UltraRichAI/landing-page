@@ -44,20 +44,20 @@ export default function SuitesSection({ onOpenBooking }: SuitesSectionProps) {
   };
 
   return (
-    <section id="suites" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5] text-[#1C221D] overflow-hidden">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <section id="suites" className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5] text-[#1C221D] overflow-hidden">
+      <div className="max-w-7xl mx-auto space-y-10 sm:space-y-12">
         
         {/* Section Header */}
-        <div className="text-center space-y-3">
+        <div className="text-center space-y-2.5 sm:space-y-3">
           <div className="flex items-center justify-center gap-3">
-            <span className="h-[1px] w-8 bg-[#D2CBB5]" />
-            <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[#6E7970]">
+            <span className="h-[1px] w-6 sm:w-8 bg-[#D2CBB5]" />
+            <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold text-[#6E7970]">
               NUESTRAS HABITACIONES
             </span>
-            <span className="h-[1px] w-8 bg-[#D2CBB5]" />
+            <span className="h-[1px] w-6 sm:w-8 bg-[#D2CBB5]" />
           </div>
           
-          <h2 className="text-3xl sm:text-5xl font-serif-title font-normal text-[#1C221D] tracking-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif-title font-normal text-[#1C221D] tracking-tight">
             Diseñadas para el descanso. Creadas para ti.
           </h2>
         </div>
@@ -84,15 +84,15 @@ export default function SuitesSection({ onOpenBooking }: SuitesSectionProps) {
           </button>
 
           {/* 4 Room Cards Grid */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
             {rooms.map((room) => (
               <div
                 key={room.id}
                 onClick={() => onOpenBooking(room.id)}
-                className="group cursor-pointer flex flex-col space-y-4"
+                className="group cursor-pointer flex flex-col space-y-3 sm:space-y-4 p-3 sm:p-0 rounded-2xl sm:rounded-none bg-[#FFFFFF] sm:bg-transparent border sm:border-0 border-[#E8E1D3]/80 shadow-sm sm:shadow-none hover:shadow-md sm:hover:shadow-none transition-shadow"
               >
                 {/* Image Container with rounded corners */}
-                <div className="relative aspect-square w-full rounded-2xl overflow-hidden bg-[#E8E1D3] shadow-md group-hover:shadow-xl transition-all duration-300">
+                <div className="relative aspect-[16/10] sm:aspect-square w-full rounded-xl sm:rounded-2xl overflow-hidden bg-[#E8E1D3] shadow-sm sm:shadow-md group-hover:shadow-xl transition-all duration-300">
                   <img
                     src={room.image}
                     alt={room.title}
@@ -103,14 +103,14 @@ export default function SuitesSection({ onOpenBooking }: SuitesSectionProps) {
                 </div>
 
                 {/* Card Text Content */}
-                <div className="space-y-1.5 text-left">
-                  <h3 className="font-serif-title text-xl font-bold text-[#1C221D] group-hover:text-[#233526] transition-colors">
+                <div className="space-y-1 sm:space-y-1.5 text-left">
+                  <h3 className="font-serif-title text-lg sm:text-xl font-bold text-[#1C221D] group-hover:text-[#233526] transition-colors">
                     {room.title}
                   </h3>
                   <p className="text-xs sm:text-sm text-[#6E7970] font-light leading-relaxed">
                     {room.subtitle}
                   </p>
-                  <div className="pt-2 flex items-center justify-between">
+                  <div className="pt-1.5 sm:pt-2 flex items-center justify-between">
                     <span className="text-xs font-semibold text-[#233526] uppercase underline decoration-[#D4AF37] underline-offset-4 group-hover:text-[#18261A]">
                       Consultar Disponibilidad →
                     </span>

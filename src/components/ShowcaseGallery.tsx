@@ -39,34 +39,34 @@ export default function ShowcaseGallery({ onOpenBooking }: ShowcaseGalleryProps)
   };
 
   return (
-    <section id="galeria" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5] text-[#1C221D] border-t border-[#E8E1D3]/80">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <section id="galeria" className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#FAF8F5] text-[#1C221D] border-t border-[#E8E1D3]/80">
+      <div className="max-w-7xl mx-auto space-y-10 sm:space-y-12">
         
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E8E1D3] pb-8">
-          <div className="space-y-3 max-w-2xl">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-5 sm:gap-6 border-b border-[#E8E1D3] pb-6 sm:pb-8">
+          <div className="space-y-2 sm:space-y-3 max-w-2xl">
             <div className="flex items-center gap-2">
               <span className="h-[1px] w-6 bg-[#D2CBB5]" />
-              <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[#6E7970]">
+              <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold text-[#6E7970]">
                 GALERÍA DEL HOTEL
               </span>
             </div>
             
-            <h2 className="text-3xl sm:text-5xl font-serif-title font-normal text-[#1C221D] tracking-tight">
+            <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif-title font-normal text-[#1C221D] tracking-tight">
               Un Vistazo a Mili Hotel
             </h2>
-            <p className="text-sm sm:text-base text-[#475149] font-light leading-relaxed">
+            <p className="text-xs sm:text-base text-[#475149] font-light leading-relaxed">
               Explora nuestras habitaciones y la atmósfera única de nuestro hotel boutique.
             </p>
           </div>
 
-          {/* Filter Pills */}
-          <div className="flex items-center gap-2 overflow-x-auto pb-2 md:pb-0">
+          {/* Filter Pills with touch scrolling */}
+          <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 md:pb-0 -mx-4 px-4 sm:mx-0 sm:px-0">
             {categories.map((cat) => (
               <button
                 key={cat.id}
                 onClick={() => setSelectedCategory(cat.id)}
-                className={`px-4 py-2 rounded-xl text-xs font-semibold transition-all whitespace-nowrap cursor-pointer ${
+                className={`px-3.5 sm:px-4 py-2 rounded-xl text-xs font-semibold transition-all whitespace-nowrap cursor-pointer shrink-0 ${
                   selectedCategory === cat.id
                     ? 'bg-[#233526] text-white shadow-md'
                     : 'bg-[#FCFBF9] border border-[#E8E1D3] text-[#6E7970] hover:text-[#1C221D] hover:border-[#233526]/30'
@@ -79,7 +79,7 @@ export default function ShowcaseGallery({ onOpenBooking }: ShowcaseGalleryProps)
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
           {filteredItems.map((item) => (
             <div
               key={item.id}
@@ -121,16 +121,17 @@ export default function ShowcaseGallery({ onOpenBooking }: ShowcaseGalleryProps)
 
       {/* Lightbox Modal */}
       {activeItem && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/85 backdrop-blur-md">
-          <div className="relative max-w-4xl w-full bg-[#FCFBF9] p-6 rounded-2xl border border-[#E8E1D3] shadow-2xl text-[#1C221D]">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-4 bg-black/85 backdrop-blur-md overflow-y-auto">
+          <div className="relative max-w-4xl w-full max-h-[92vh] overflow-y-auto bg-[#FCFBF9] p-4 sm:p-6 rounded-2xl border border-[#E8E1D3] shadow-2xl text-[#1C221D]">
             <button
               onClick={() => setActiveItem(null)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-[#EFECE3] hover:bg-[#233526] hover:text-white text-[#1C221D] transition-colors cursor-pointer"
+              className="absolute top-3 right-3 sm:top-4 sm:right-4 z-20 p-2 rounded-full bg-[#EFECE3] hover:bg-[#233526] hover:text-white text-[#1C221D] transition-colors cursor-pointer"
+              aria-label="Cerrar"
             >
-              <X className="w-5 h-5" />
+              <X className="w-4 h-4 sm:w-5 sm:h-5" />
             </button>
 
-            <div className="rounded-xl overflow-hidden aspect-[16/10] mb-5 bg-[#E8E1D3]">
+            <div className="rounded-xl overflow-hidden aspect-[16/10] mb-4 sm:mb-5 bg-[#E8E1D3]">
               <img
                 src={activeItem.imageUrl}
                 alt={activeItem.title}

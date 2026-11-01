@@ -35,15 +35,13 @@ export default function SocialProof({ onOpenBooking }: SocialProofProps) {
       <div className="max-w-7xl mx-auto space-y-12">
         
         {/* 4 Feature Badges matching the bottom strip in the reference image */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-[#E2DCCE]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {features.map((item, idx) => {
             const Icon = item.icon;
             return (
               <div
                 key={idx}
-                className={`flex flex-col items-center text-center space-y-2.5 pt-6 sm:pt-0 ${
-                  idx > 0 ? 'sm:pl-6' : ''
-                }`}
+                className="flex flex-col items-center text-center space-y-2.5 p-4 rounded-2xl bg-[#FCFBF9] sm:bg-transparent border sm:border-0 border-[#E8E1D3]/60"
               >
                 <div className="w-10 h-10 rounded-xl bg-[#EFECE3] flex items-center justify-center text-[#233526]">
                   <Icon className="w-5 h-5 stroke-[1.75]" />
@@ -51,7 +49,7 @@ export default function SocialProof({ onOpenBooking }: SocialProofProps) {
                 <h4 className="text-xs font-bold tracking-[0.2em] text-[#1C221D] uppercase font-heading">
                   {item.title}
                 </h4>
-                <p className="text-xs text-[#6E7970] font-light max-w-[200px] leading-relaxed">
+                <p className="text-xs text-[#6E7970] font-light max-w-[220px] leading-relaxed">
                   {item.subtitle}
                 </p>
               </div>
@@ -60,19 +58,19 @@ export default function SocialProof({ onOpenBooking }: SocialProofProps) {
         </div>
 
         {/* Stats Row in Refined Boutique Style */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6 border-t border-[#E8E1D3]/80">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6 pt-6 border-t border-[#E8E1D3]/80">
           {STATS.map((stat, index) => (
             <div
               key={index}
-              className="bg-[#FFFFFF] p-6 rounded-2xl border border-[#E8E1D3] text-center space-y-1 shadow-sm hover:shadow-md transition-shadow"
+              className="bg-[#FFFFFF] p-4 sm:p-6 rounded-2xl border border-[#E8E1D3] text-center space-y-1 shadow-sm hover:shadow-md transition-shadow"
             >
-              <div className="text-3xl sm:text-4xl font-serif-title font-bold text-[#233526]">
+              <div className="text-2xl sm:text-4xl font-serif-title font-bold text-[#233526]">
                 {stat.value}
               </div>
-              <div className="text-xs font-bold text-[#1C221D] tracking-wide uppercase">
+              <div className="text-[11px] sm:text-xs font-bold text-[#1C221D] tracking-wide uppercase">
                 {stat.label}
               </div>
-              <div className="text-[11px] text-[#6E7970] font-light">
+              <div className="text-[10px] sm:text-[11px] text-[#6E7970] font-light leading-tight">
                 {stat.detail}
               </div>
             </div>

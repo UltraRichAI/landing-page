@@ -6,10 +6,10 @@ import { MapPin, Phone, Mail, Send } from 'lucide-react';
 export default function Footer() {
   return (
     <footer id="contacto" className="relative bg-[#142016] text-stone-300 text-xs font-light border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-12 space-y-16">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 sm:pt-20 pb-10 sm:pb-12 space-y-12 sm:space-y-16">
         
         {/* Main Footer Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 sm:gap-10">
           
           {/* Column 1: Brand & Coordinates */}
           <div className="lg:col-span-2 space-y-5">

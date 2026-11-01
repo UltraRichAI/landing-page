@@ -40,20 +40,20 @@ export default function TestimonialsSection() {
   };
 
   return (
-    <section id="testimonios" className="relative py-24 px-4 sm:px-6 lg:px-8 bg-[#F7F5F0] text-[#1C221D] overflow-hidden border-t border-[#E8E1D3]/80">
-      <div className="max-w-7xl mx-auto space-y-12">
+    <section id="testimonios" className="relative py-16 sm:py-24 px-4 sm:px-6 lg:px-8 bg-[#F7F5F0] text-[#1C221D] overflow-hidden border-t border-[#E8E1D3]/80">
+      <div className="max-w-7xl mx-auto space-y-10 sm:space-y-12">
         
         {/* Section Header */}
-        <div className="text-center space-y-3">
+        <div className="text-center space-y-2.5 sm:space-y-3">
           <div className="flex items-center justify-center gap-3">
-            <span className="h-[1px] w-8 bg-[#D2CBB5]" />
-            <span className="text-xs uppercase tracking-[0.25em] font-semibold text-[#6E7970]">
+            <span className="h-[1px] w-6 sm:w-8 bg-[#D2CBB5]" />
+            <span className="text-[11px] sm:text-xs uppercase tracking-[0.25em] font-semibold text-[#6E7970]">
               OPINIONES DE HUÉSPEDES
             </span>
-            <span className="h-[1px] w-8 bg-[#D2CBB5]" />
+            <span className="h-[1px] w-6 sm:w-8 bg-[#D2CBB5]" />
           </div>
           
-          <h2 className="text-3xl sm:text-5xl font-serif-title font-normal text-[#1C221D] tracking-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-serif-title font-normal text-[#1C221D] tracking-tight">
             La experiencia de quienes nos visitan
           </h2>
         </div>

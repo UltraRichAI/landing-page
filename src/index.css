@@ -139,8 +139,14 @@
    ===================================================== */
 .service-card-flip {
   perspective: 1200px;
-  min-height: 440px;
+  min-height: 420px;
   cursor: pointer;
+}
+
+@media (min-width: 640px) {
+  .service-card-flip {
+    min-height: 440px;
+  }
 }
 
 .service-card-inner {
@@ -151,7 +157,14 @@
   transform-style: preserve-3d;
 }
 
-.service-card-flip:hover .service-card-inner,
+/* Only trigger flip on hover for pointer/mouse devices, not on touch devices */
+@media (hover: hover) and (pointer: fine) {
+  .service-card-flip:hover .service-card-inner {
+    transform: rotateY(180deg);
+  }
+}
+
+/* Explicit flip state via tap/click */
 .service-card-flip.is-flipped .service-card-inner {
   transform: rotateY(180deg);
 }
@@ -180,6 +193,15 @@
   background-color: #1A271C;
   border: 1px solid rgba(197, 160, 89, 0.3);
   color: #FFFFFF;
+}
+
+/* Hide scrollbar for clean horizontal tab scrolling on mobile */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
 /* Custom Scrollbar */

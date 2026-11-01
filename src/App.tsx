@@ -83,10 +83,10 @@ export default function App() {
       <Footer />
 
       {/* Floating Action Pill (Bottom Right - Mobile Only) */}
-      <div className="fixed bottom-6 right-6 z-40 flex items-center gap-3 md:hidden">
+      <div className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-40 flex items-center gap-2 md:hidden">
         <button
           onClick={() => handleOpenBooking()}
-          className="px-5 py-3 rounded-full bg-[#233526] hover:bg-[#18261A] text-white text-xs font-semibold tracking-wider uppercase shadow-xl hover:shadow-2xl flex items-center gap-2 transition-all transform hover:scale-105 border border-white/20 cursor-pointer"
+          className="px-4 py-2.5 sm:px-5 sm:py-3 rounded-full bg-[#233526] hover:bg-[#18261A] text-white text-[11px] sm:text-xs font-semibold tracking-wider uppercase shadow-xl hover:shadow-2xl flex items-center gap-2 transition-all transform active:scale-95 border border-white/20 cursor-pointer"
         >
           <span>Consultar Disponibilidad</span>
           <ArrowRight className="w-3.5 h-3.5" />

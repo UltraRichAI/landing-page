@@ -85,13 +85,13 @@ Hola, deseo consultar la disponibilidad para estas fechas.`;
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-black/75 backdrop-blur-md overflow-y-auto">
-      <div className="relative max-w-2xl w-full my-8 bg-[#FCFBF9] text-[#1C221D] border border-[#E8E1D3] rounded-3xl p-6 sm:p-8 shadow-2xl">
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-black/75 backdrop-blur-md overflow-y-auto">
+      <div className="relative max-w-2xl w-full max-h-[92vh] overflow-y-auto my-auto bg-[#FCFBF9] text-[#1C221D] border border-[#E8E1D3] rounded-2xl sm:rounded-3xl p-4 sm:p-8 shadow-2xl">
         
         {/* Close Button */}
         <button
           onClick={onClose}
-          className="absolute top-6 right-6 p-2 rounded-full bg-[#EFECE3] text-[#1C221D] hover:bg-[#233526] hover:text-white cursor-pointer transition-colors"
+          className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 p-2 rounded-full bg-[#EFECE3] text-[#1C221D] hover:bg-[#233526] hover:text-white cursor-pointer transition-colors"
           aria-label="Cerrar modal"
         >
           <X className="w-4 h-4" />
