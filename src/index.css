@@ -1,0 +1,199 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-primary: #F7F5F0;
+    --bg-secondary: #FAF8F5;
+    --bg-card: #FFFFFF;
+    --bg-dark: #1A271C;
+    
+    /* Boutique Forest Green & Warm Sand Palette */
+    --forest-rgb: 31, 49, 34;
+    --forest-900: #142016;
+    --forest-800: #1A271C;
+    --forest-700: #233526;
+    --forest-600: #2E4532;
+    --forest-500: #3E5A43;
+    
+    /* Warm Gold / Brass Accent */
+    --gold-rgb: 197, 160, 89;
+    --gold-500: #C5A059;
+    --gold-600: #B38E46;
+    --gold-400: #D8B775;
+
+    /* Warm Neutrals */
+    --sand-50: #FCFBF9;
+    --sand-100: #F7F5F0;
+    --sand-200: #EFECE3;
+    --sand-300: #E4DFC3;
+    --sand-400: #D2CBB5;
+
+    --text-primary: #1C221D;
+    --text-secondary: #475149;
+    --text-tertiary: #6E7970;
+    --text-muted: #8E9990;
+  }
+
+  body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+
+  h1, h2, h3, h4, .font-serif-title {
+    font-family: 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-heading {
+    font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  }
+
+  .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+/* =====================================================
+   BOUTIQUE LUXURY CARDS & BUTTONS
+   ===================================================== */
+.boutique-card {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(35, 53, 38, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px -5px rgba(31, 49, 34, 0.05), 0 4px 10px -2px rgba(31, 49, 34, 0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.boutique-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(31, 49, 34, 0.12), 0 8px 16px -4px rgba(31, 49, 34, 0.04);
+  border-color: rgba(35, 53, 38, 0.18);
+}
+
+.boutique-card-dark {
+  background-color: #1A271C;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  color: #FFFFFF;
+  box-shadow: 0 15px 35px -5px rgba(0, 0, 0, 0.35);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.boutique-card-dark:hover {
+  transform: translateY(-4px);
+  border-color: rgba(197, 160, 89, 0.4);
+  box-shadow: 0 25px 50px -10px rgba(0, 0, 0, 0.5);
+}
+
+.btn-forest {
+  background-color: #233526;
+  color: #FFFFFF;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 14px rgba(35, 53, 38, 0.25);
+}
+
+.btn-forest:hover {
+  background-color: #18261A;
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 22px rgba(35, 53, 38, 0.35);
+}
+
+.btn-outline-forest {
+  background-color: transparent;
+  color: #233526;
+  border: 1.5px solid #233526;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-outline-forest:hover {
+  background-color: #233526;
+  color: #FFFFFF;
+  transform: translateY(-1.5px);
+}
+
+.btn-gold {
+  background: linear-gradient(135deg, #D4AF37 0%, #C5A059 100%);
+  color: #1A271C;
+  font-weight: 700;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(197, 160, 89, 0.35);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-gold:hover {
+  background: linear-gradient(135deg, #E2BF4D 0%, #D4AF37 100%);
+  transform: translateY(-1.5px);
+  box-shadow: 0 8px 24px rgba(197, 160, 89, 0.45);
+}
+
+/* =====================================================
+   3D FLIP CARDS
+   ===================================================== */
+.service-card-flip {
+  perspective: 1200px;
+  min-height: 440px;
+  cursor: pointer;
+}
+
+.service-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.34, 1.56, 0.64, 1);
+  transform-style: preserve-3d;
+}
+
+.service-card-flip:hover .service-card-inner,
+.service-card-flip.is-flipped .service-card-inner {
+  transform: rotateY(180deg);
+}
+
+.service-card-front,
+.service-card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.service-card-front {
+  background-color: #FFFFFF;
+  border: 1px solid rgba(35, 53, 38, 0.1);
+  box-shadow: 0 10px 25px -5px rgba(31, 49, 34, 0.06);
+}
+
+.service-card-back {
+  transform: rotateY(180deg);
+  background-color: #1A271C;
+  border: 1px solid rgba(197, 160, 89, 0.3);
+  color: #FFFFFF;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #F7F5F0;
+}
+::-webkit-scrollbar-thumb {
+  background: #D2CBB5;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #233526;
+}
+
